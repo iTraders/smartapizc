@@ -17,3 +17,9 @@ __version__ = "v0.0.1.dev0"
 
 # init-time options registrations
 from smartapizc import client
+from smartapizc import errors
+
+# config directory is to be made available as a global variable for module
+import os
+
+CONFIG_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "config")
