@@ -18,6 +18,7 @@ __version__ = "v0.0.1.dev0"
 # init-time options registrations
 from smartapizc import client
 from smartapizc import errors
+from smartapizc import history
 
 # config directory is to be made available as a global variable for module
 import os
