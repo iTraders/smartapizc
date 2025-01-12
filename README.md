@@ -10,3 +10,27 @@
 [![GitHub Issues](https://img.shields.io/github/issues/iTraders/smartapizc?style=plastic)](https://github.com/iTraders/smartapizc/issues)
 
 </div>
+
+<div align = "justify">
+
+## Getting Started
+
+```python
+import pandas as pd
+import smartapizc as api
+
+# send the totp, apikey as an argument, or follow use prompt
+client, session = api.client.get_client(totp = "PSPO4OGXDJTFJU5IYI7253BF34", apikey = "xJNH1Psh")
+
+# define the interface to fetch historical Nifty50 data
+interface = api.history.GetHistoricalData("NSE", "99926000")
+
+data = interface.get(
+    interval = "1M", fromdate = "2025-01-10 15:00", todate = "2025-01-10 15:30",
+    client = client, rdtype = pd.DataFrame, rdtypekwargs = {"columns" : ["timestamp", "open", "high", "low", "close", "volume"]}
+)
+
+data.sample(3) # print the dataframe
+```
+
+</div>
